@@ -181,6 +181,12 @@ export default {
 
       EMITTER.$off(`slideGroup:${oldVal}`, this._groupSlideHandler);
       this.addGroupListeners();
+    },
+    autoPlay(val, oldVal) {
+      if (val === oldVal) {
+        return;
+      }
+      this.restartTimer();
     }
   },
   methods: {
